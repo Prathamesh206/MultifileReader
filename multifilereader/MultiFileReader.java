@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class MultiFileReader {
 	public static void main(String[] args) throws IOException {
 
-		//		final Logger log=Logger.getLogger(MultiFileReader.class);   
+	        BufferReader  bufferRead=null;
 		ArrayList<String>txtFiles=new ArrayList<String>();
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter the drive name");
@@ -52,7 +52,9 @@ public class MultiFileReader {
 
 		catch(FileNotFoundException fileNotFoundException) {
 			System.out.println("File not found Exception");
-		}
+		}finally{
+			if(bufferRead!=null){
+				bufferRead.close();
 
 
 	}
